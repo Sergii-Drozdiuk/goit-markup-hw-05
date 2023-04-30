@@ -350,6 +350,7 @@ body {
 }
 .footer-position {
   display: flex;
+  gap: 120px;
   align-items: baseline;
 }
 .logo-part-footer {
@@ -362,9 +363,9 @@ body {
 .footer-text {
   max-width: 264px;
 }
-.footer-thumb-position {
+/* .footer-thumb-position {
   margin-right: 120px;
-}
+} */
 .social-text-footer {
   margin-bottom: 16px;
 
