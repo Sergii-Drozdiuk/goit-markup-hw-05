@@ -153,11 +153,27 @@ body {
   color: var(--secondary-color);
 }
 .nav-link {
+  position: relative;
+
   display: block;
   padding: 24px 0;
 
   font-weight: 500;
   color: var(--secondary-color);
+}
+.nav-link.current::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  opacity: 1;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--pressed-state-color);
 }
 .mail-tel {
   margin-left: auto;
@@ -173,7 +189,8 @@ body {
 .nav-link:hover,
 .nav-link:focus,
 .mail-tel-link:hover,
-.mail-tel-link:focus {
+.mail-tel-link:focus,
+.nav-link.current {
   color: var(--pressed-state-color);
 }
 
@@ -241,7 +258,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 112px;
+  min-height: 112px;
   margin-bottom: 8px;
 
   background: var(--light-color);
