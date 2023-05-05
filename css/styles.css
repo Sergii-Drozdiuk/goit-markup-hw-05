@@ -441,6 +441,10 @@ body {
 /* Modal */
 
 .backdrop {
+  opacity: 1;
+  transition: opacity var(--transition-timings),
+    visibility var(--transition-timings);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -454,11 +458,22 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
+.backdrop.is-hidden .backdrop {
+  opacity: 0;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+}
 .modal {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: transform var(--transition-timings),
+    opacity var(--transition-timings), visibility var(--transition-timings);
+
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 408px;
   height: 576px;
   background-color: var(--modal-background);
@@ -504,6 +519,10 @@ body {
 /* Filter */
 
 .filter-btn {
+  transition: color var(--transition-timings),
+    background-color var(--transition-timings),
+    border-color var(--transition-timings), box-shadow var(--transition-timings);
+
   padding: 12px 24px;
 
   font-family: inherit;
@@ -541,6 +560,9 @@ body {
   max-width: calc((100%-48px) / 3);
 }
 .project-link {
+  transition: border-color var(--transition-timings),
+    box-shadow var(--transition-timings);
+
   display: block;
 }
 .project-link:hover,
